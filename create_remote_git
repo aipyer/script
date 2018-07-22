@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Please confirm any files created, added and commited"
+echo "Please input user name and git name(splited by space)"
+read user_name git_name
+git init
+curl -u $user_name https://api.github.com/user/repos -d '{"name":"'$git_name'"}"'
+git remote add origin git@github.com:wolikang/$git_name.git
+git push origin master
+
