@@ -1,7 +1,9 @@
 #!/bin/sh
 
-echo "Please confirm any files created, added and commited"
-echo "Please input user name and git name(splited by space)"
+echo "=============Warning============="
+echo "Please confirm any files created, added and commited."
+echo "==============Split=============="
+echo "Please input user name and git name(splited by space):"
 read user_name git_name
 git init
 curl -u $user_name https://api.github.com/user/repos -d '{"name":"'$git_name'"}"'
